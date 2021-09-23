@@ -1,0 +1,15 @@
+In the early 2000s, the superscalar CPU paradigm reached the point of diminishing returns
+mainly due to power requirements and overheating concerns. Faced with a constant
+demand for performance, hardware developers were in need of new ways to efficiently
+use the ever increasing transistor count predicted by Moore’s law. The Chip MultiProcessors
+(CMPs) came as a natural solution to the power wall: several less complex and
+significantly less "power hungry" cores integrated on a single chip. In almost all ICT
+segments today, from High Performance Computing (HPC) to embedded devices, CMPs
+have become the architecture of choice. With this wide adoption of CMPs, software developers
+need to use parallel programming to fully exploit this architecture. Although
+parallelization can maximize the performance and energy efficiency of applications running
+on CMPs, it also comes with its own set of challenges. Among these, inherent
+management overheads that can account for sub-linear speedups and can increase the energy
+consumption of executions. Because of rising concerns for energy cost and battery
+life, much research and development today focuses on reducing power requirements and
+saving energy.

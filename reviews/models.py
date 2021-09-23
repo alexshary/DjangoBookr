@@ -25,6 +25,12 @@ class Book(models.Model):
                                   on_delete=models.CASCADE)
     contributors = models.ManyToManyField('Contributor',
                                           through="BookContributor")
+    cover = models.ImageField(null=True,
+                              blank=True,
+                              upload_to="book_covers/")
+    sample = models.FileField(null=True,
+                              blank=True,
+                              upload_to="book_samples/")
 
     def __str__(self):
         return "{} ({})".format(self.title, self.isbn)
@@ -68,7 +74,7 @@ class BookContributor(models.Model):
 
     def __str__(self):
         return "{} {} {}".format(self.contributor.initialled_name(), self.role, self.book.isbn)
-    
+
 
 class Review(models.Model):
     content = models.TextField(help_text="The Review text.")
