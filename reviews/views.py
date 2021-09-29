@@ -5,10 +5,12 @@ from django.contrib import messages
 from django.core.files.images import ImageFile
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.contrib.auth.decorators import permission_required
 
 from .forms import PublisherForm, SearchForm, ReviewForm, BookMediaForm
 from .models import Book, Contributor, Publisher, Review
 from .utils import average_rating
+
 
 
 def index(request):
@@ -80,6 +82,7 @@ def book_detail(request, pk):
     return render(request, "reviews/book_detail.html", context)
 
 
+@permission_required('edit_publisher')
 def publisher_edit(request, pk=None):
     if pk is not None:
         publisher = get_object_or_404(Publisher, pk=pk)
