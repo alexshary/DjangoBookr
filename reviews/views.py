@@ -5,12 +5,10 @@ from django.contrib import messages
 from django.core.files.images import ImageFile
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from django.contrib.auth.decorators import permission_required
 
 from .forms import PublisherForm, SearchForm, ReviewForm, BookMediaForm
 from .models import Book, Contributor, Publisher, Review
 from .utils import average_rating
-
 
 
 def index(request):
